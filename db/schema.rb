@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180317083708) do
+ActiveRecord::Schema.define(version: 20180318172136) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -100,8 +100,6 @@ ActiveRecord::Schema.define(version: 20180317083708) do
     t.datetime "updated_at", null: false
     t.string "cover"
     t.string "cover_filename"
-    t.bigint "categories_id"
-    t.index ["categories_id"], name: "index_products_on_categories_id"
     t.index ["title"], name: "index_products_on_title", unique: true
   end
 
@@ -129,5 +127,4 @@ ActiveRecord::Schema.define(version: 20180317083708) do
   add_foreign_key "product_categories", "categories", name: "fk_product_categories_to_categories"
   add_foreign_key "product_categories", "products", name: "fk_product_categories_to_products"
   add_foreign_key "product_variants", "products", name: "fk_product_variants_to_product"
-  add_foreign_key "products", "categories", column: "categories_id"
 end
