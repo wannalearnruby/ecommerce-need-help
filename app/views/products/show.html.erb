@@ -1,0 +1,25 @@
+<h2> 
+  <%= link_to "Categories", categories_path %> /
+  <%= @Categories.title %> / 
+  <%= link_to "Products", category_products_path %> 
+</h2>
+
+<p>
+  <%= @product.cover %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @product.title %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @product.price %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @product.description %>
+</p>
+
